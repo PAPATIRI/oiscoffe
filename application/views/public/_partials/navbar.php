@@ -1,7 +1,7 @@
  <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
      <div class="container">
-         <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+         <a class="navbar-brand" href="<?php echo base_url('home') ?>">OIS COFFE</a>
          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
              Menu
              <i class="fas fa-bars"></i>
@@ -9,16 +9,19 @@
          <div class="collapse navbar-collapse" id="navbarResponsive">
              <ul class="navbar-nav ml-auto">
                  <li class="nav-item">
-                     <a class="nav-link" href="index.html">Beranda</a>
+                     <a class="nav-link" href="<?php echo base_url('home') ?>">Beranda</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="about.html">Menu</a>
+                     <a class="nav-link" href="<?php echo base_url('produk') ?>">Produk</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="post.html">Galeri</a>
+                     <a class="nav-link" href="<?php echo base_url('galeri') ?>">Galeri</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="contact.html">Tentang Kami</a>
+                     <a class="nav-link" href="<?php echo base_url('tentang') ?>">Tentang Kami</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="<?php echo base_url('blog') ?>">Blog</a>
                  </li>
              </ul>
          </div>
