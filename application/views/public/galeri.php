@@ -3,7 +3,7 @@
 
 <body>
 
-    <p>hello ini halaman produk</p>
+    <p>hello ini halaman galeri</p>
 
 </body>
 
