@@ -3,26 +3,26 @@
     <!--/.nav-collapse -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Admin Ois Coffee</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo base_url('index.php/page/home'); ?>">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo base_url('page/home'); ?>">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('index.php/page/pengguna'); ?>">Pengguna</a>
+                        <a class="nav-link" href="<?php echo base_url('page/berita'); ?>">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('index.php/page/kontak'); ?>">Kontak</a>
+                        <a class="nav-link" href="<?php echo base_url('page/kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('index.php/page/berita'); ?>">Berita</a>
+                        <a class="nav-link" href="<?php echo base_url('menu'); ?>">Menu Ois</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('index.php/auth/logout'); ?>">Log out</a>
+                    <li class="nav-item ml-5">
+                        <a class="nav-link btn btn-danger" href="<?php echo base_url('auth/logout'); ?>">Log out</a>
                     </li>
                 </ul>
             </div>

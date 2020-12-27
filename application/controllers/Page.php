@@ -7,17 +7,14 @@ class Page extends MY_Controller
         // function render_backend tersebut dari file core/MY_Controller.php
         $this->render_backend('home'); // load view home.php
     }
-    public function berita()
+    public function menu()
     {
         // function render_backend tersebut dari file core/MY_Controller.php
-        $this->render_backend('berita'); // load view berita.php
+        $this->render_backend('menu'); // load view berita.php
     }
-    public function pengguna()
+    public function berita()
     {
-        // if ($this->session->userdata('role') != 'admin') // Jika user yg login bukan admin
-        //     show_404(); // Redirect ke halaman 404 Not found
-        // // function render_backend tersebut dari file core/MY_Controller.php
-        $this->render_backend('pengguna'); // load view pengguna.php
+        $this->render_backend('berita'); // load view berita.php
     }
     public function kontak()
     {
