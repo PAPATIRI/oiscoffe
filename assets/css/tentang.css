@@ -1,0 +1,23 @@
+header.masthead .site-heading .subheading p,
+header.masthead .site-heading .subheading .desc {
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 1.1;
+	display: block;
+	margin: 10px 0 0;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header.masthead .site-heading .subheading .subabout {
+	padding: 2em;
+	background: rgba(0, 0, 0, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(88, 88, 88, 0.37);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.sejarah-section {
+	text-align: center;
+	color: #f3f3f3;
+}

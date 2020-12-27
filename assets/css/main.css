@@ -13,7 +13,7 @@ abu-abu: e1e1e1
 
 body {
 	font-size: 20px;
-	color: #212529;
+	color: #f3f3f3;
 	font-family: "Roboto", "Times New Roman", serif;
 	background-color: #1b1b1b;
 }
@@ -206,7 +206,7 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
 	padding: 200px 0 150px;
-	color: white;
+	color: #f3f3f3;
 }
 
 header.masthead.site-heading img {
@@ -431,7 +431,7 @@ footer .copyright {
 	padding: 25px 35px;
 }
 
-/* lengkapnya */
+/* lengkapnya home page */
 main {
 	color: #f3f3f3;
 	text-align: center;

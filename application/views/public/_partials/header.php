@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -17,5 +20,9 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/produk.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/galeri.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/tentang.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/berita.css') ?>" rel="stylesheet">
 
 </head>

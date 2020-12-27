@@ -1,0 +1,26 @@
+.btn-blog {
+	background-color: #141414;
+	color: #f3f3f3;
+}
+
+.berita-section {
+	object-fit: cover;
+}
+
+.card-custom {
+	margin-top: 2.5em;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(88, 88, 88, 0.37);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.card-custom .card-body .card-title {
+	color: #141414;
+}
+.card-custom .card-body .card-text {
+	color: #1b1b1b;
+}

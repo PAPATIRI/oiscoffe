@@ -3,3 +3,5 @@
 
 <!-- Custom scripts for this template -->
 <script src="<?php echo base_url('assets/js/clean-blog.min.js') ?>"></script>
+
+</html>

@@ -1,0 +1,25 @@
+/* color pallete
+hitam pekat : 141414
+hitam muda: 1b1b1b
+putih mudah: f3f3f3
+abu-abu: e1e1e1
+*/
+header.produkhead {
+	margin-bottom: 50px;
+	height: 50vh;
+	background: no-repeat center center;
+	background-color: #868e96;
+	background-attachment: scroll;
+	position: relative;
+	background-size: cover;
+}
+
+header.produkhead .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #1c1e20;
+	opacity: 0.5;
+}
