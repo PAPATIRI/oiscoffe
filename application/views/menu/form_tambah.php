@@ -2,7 +2,6 @@
 
 <head>
     <title>Form Tambah Data Menu Ois Coffee</title>
-    <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
 </head>
 
 <body>

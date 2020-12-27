@@ -13,10 +13,10 @@
                         <a class="nav-link" href="<?php echo base_url('page/home'); ?>">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('page/berita'); ?>">Berita</a>
+                        <a class="nav-link" href="<?php echo base_url('berita'); ?>">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('page/kontak'); ?>">Kontak</a>
+                        <a class="nav-link" href="<?php echo base_url('kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('menu'); ?>">Menu Ois</a>

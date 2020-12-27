@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Form Tambah Data Menu Ois Coffee</title>
+    <title>Form Ubah Data Menu Ois Coffee</title>
 </head>
 
 <body>
