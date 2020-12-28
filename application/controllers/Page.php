@@ -16,9 +16,9 @@ class Page extends MY_Controller
     {
         $this->render_backend('berita'); // load view berita.php
     }
-    public function kontak()
+    public function galeri()
     {
         // function render_backend tersebut dari file core/MY_Controller.php
-        $this->render_backend('kontak'); // load view kontak.php
+        $this->render_backend('galeriadmin'); // load view galeri.php
     }
 }

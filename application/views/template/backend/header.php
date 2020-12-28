@@ -16,7 +16,7 @@
                         <a class="nav-link" href="<?php echo base_url('berita'); ?>">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('kontak'); ?>">Kontak</a>
+                        <a class="nav-link" href="<?php echo base_url('galeriadmin'); ?>">Geleri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('menu'); ?>">Menu Ois</a>

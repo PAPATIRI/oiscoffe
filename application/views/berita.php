@@ -6,7 +6,7 @@ if ($this->session->userdata('role') == 'admin') { // Jika role-nya admin
 <?php
 }
 ?>
-<h2 style="margin-top: 0;margin-bottom: 0;">Artikel OIS COFFEE</h2>
+<h2 style="margin-top: 0;margin-bottom: 0;">Menu OIS COFFEE</h2>
 <div class="clearfix"></div>
 <hr />
 <div class="table-responsive">
