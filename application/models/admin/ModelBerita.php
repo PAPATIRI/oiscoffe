@@ -37,7 +37,7 @@ class ModelBerita extends CI_Model
         $data = array(
             "judul" => $this->input->post('input_judul'),
             "isi" => $this->input->post('input_isi'),
-            "gambar" => $this->input->post('input_gambar')
+            "gambar" => $this->_uploadImage()
         );
 
         $this->db->insert('berita', $data); // Untuk mengeksekusi perintah insert data
@@ -52,6 +52,12 @@ class ModelBerita extends CI_Model
             "gambar" => $this->input->post('input_gambar')
         );
 
+        // if (!empty($_FILES["gambar"]["name"])) {
+        //     $this->gambar = $this->_uploadImage();
+        // } else {
+        //     $this->gambar = $post("old_image");
+        // }
+
         $this->db->where('id', $id);
         $this->db->update('berita', $data); // Untuk mengeksekusi perintah update data
     }
@@ -61,5 +67,24 @@ class ModelBerita extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->delete('berita'); // Untuk mengeksekusi perintah delete data
+    }
+
+    private function _uploadImage()
+    {
+        $config['upload_path']          = './upload/galeri/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->id;
+        $config['overwrite']            = true;
+        $config['max_size']             = 2048;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('gambar')) {
+            return $this->upload->data("file_name");
+        }
+
+        return "default.jpg";
     }
 }

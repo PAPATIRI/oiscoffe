@@ -22,8 +22,20 @@
             </tr>
             <tr>
                 <td>Gambar</td>
-                <td><input class="form-control" type="text" name="input_gambar" value="<?php echo set_value('input_gambar'); ?>"></td>
+                <td>
+                    <div class="form-group">
+                        <label for="name">Photo</label>
+                        <input enctype="multipart/form-data" class=" form-control-file <?php echo form_error('gambar') ? 'is-invalid' : '' ?>" type="file" name="gambar" />
+                        <div class="invalid-feedback">
+                            <?php echo form_error('gambar') ?>
+                        </div>
+                    </div>
+                </td>
             </tr>
+            <!-- <tr>
+                <td>Gambar</td>
+                <td><input class="form-control" type="text" name="input_gambar" value="<?php echo set_value('input_gambar'); ?>"></td>
+            </tr> -->
         </table>
 
         <hr>
