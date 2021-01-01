@@ -16,10 +16,6 @@ class ModelBerita extends CI_Model
     public function validation($mode)
     {
         $this->load->library('form_validation'); // Load library form_validation untuk proses validasinya
-
-        // Tambahkan if apakah $mode save atau update
-        // Karena ketika update, NIS tidak harus divalidasi
-        // Jadi NIS di validasi hanya ketika menambah data siswa saja
         if ($mode == "save")
             $this->form_validation->set_rules('input_judul', 'Judul', 'required|max_length[550]');
         $this->form_validation->set_rules('input_isi', 'Isi', 'required');
@@ -31,13 +27,34 @@ class ModelBerita extends CI_Model
             return FALSE; // Maka kembalikan hasilnya dengan FALSE
     }
 
+    public function upload()
+    {
+        $config['upload_path'] = './upload/berita';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size']  = '8000';
+        $config['remove_space'] = TRUE;
+
+        $this->load->library('upload', $config); // Load konfigurasi uploadnya
+        if ($this->upload->do_upload('input_gambar')) { // Lakukan upload dan Cek jika proses upload berhasil
+            // Jika berhasil :
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else {
+            // Jika gagal :
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+            return $return;
+        }
+    }
+
     // Fungsi untuk melakukan simpan data ke tabel siswa
-    public function save()
+    public function save($upload)
     {
         $data = array(
             "judul" => $this->input->post('input_judul'),
             "isi" => $this->input->post('input_isi'),
-            "gambar" => $this->_uploadImage()
+            "gambar" => $this->input->post('input_gambar'),
+            'nama_file' => $upload['file']['file_name'],
+            'ukuran_file' => $upload['file']['file_size'],
         );
 
         $this->db->insert('berita', $data); // Untuk mengeksekusi perintah insert data
@@ -67,24 +84,5 @@ class ModelBerita extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->delete('berita'); // Untuk mengeksekusi perintah delete data
-    }
-
-    private function _uploadImage()
-    {
-        $config['upload_path']          = './upload/galeri/';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['file_name']            = $this->id;
-        $config['overwrite']            = true;
-        $config['max_size']             = 2048;
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
-
-        $this->load->library('upload', $config);
-
-        if ($this->upload->do_upload('gambar')) {
-            return $this->upload->data("file_name");
-        }
-
-        return "default.jpg";
     }
 }

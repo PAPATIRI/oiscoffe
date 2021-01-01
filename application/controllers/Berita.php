@@ -18,10 +18,16 @@ class Berita extends MY_Controller
 
     public function tambah()
     {
+        $data = array();
         if ($this->input->post('submit')) { // Jika user mengklik tombol submit yang ada di form
             if ($this->ModelBerita->validation("save")) { // Jika validasi sukses atau hasil validasi adalah TRUE
-                $this->ModelBerita->save(); // Panggil fungsi save() yang ada di ModelBerita.php
-                redirect('berita');
+                $upload = $this->ModelBerita->upload();
+                if ($upload['result'] == "success") {
+                    $this->ModelBerita->save($upload); // Panggil fungsi save() yang ada di ModelBerita.php
+                    redirect('berita');
+                } else {
+                    $data['message'] = $upload['error'];
+                }
             }
         }
 

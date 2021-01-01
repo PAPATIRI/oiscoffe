@@ -18,14 +18,18 @@ class GaleriAdmin extends MY_Controller
 
     public function tambah()
     {
+        $data = array();
         if ($this->input->post('submit')) { // Jika user mengklik tombol submit yang ada di form
             if ($this->ModelGaleri->validation("save")) { // Jika validasi sukses atau hasil validasi adalah TRUE
-                $this->ModelGaleri->save(); // Panggil fungsi save() yang ada di ModelGaleri.php
-                redirect('galeriadmin');
+                $upload = $this->ModelGaleri->upload();
+                if ($upload['result'] == 'success') {
+                    $this->ModelGaleri->save(); // Panggil fungsi save() yang ada di ModelGaleri.php
+                    redirect('galeriadmin');
+                }
             }
         }
 
-        $this->render_backend('galeriadmin/form_tambah');
+        $this->render_backend('galeriadmin/form_tambah', $data);
     }
 
     public function ubah($id)

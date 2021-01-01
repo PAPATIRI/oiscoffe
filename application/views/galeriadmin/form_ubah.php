@@ -11,7 +11,7 @@
         <hr>
         <!-- Menampilkan Error jika validasi tidak valid -->
         <div style="color: red;"><?php echo validation_errors(); ?></div>
-        <?php echo form_open("galeriadmin/ubah/" . $galeriadmin->id); ?>
+        <?php echo form_open_multipart("galeriadmin/ubah/" . $galeriadmin->id); ?>
         <table class="table table-dark" border="1" cellpadding="7">
             <tr>
                 <td>Nama</td>
