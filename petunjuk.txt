@@ -10,4 +10,21 @@ step persiapan.
 
 1. pastikan sudah terinstall xampp di laptop kamu untuk os (windows), atau wampp (macbook), atau lampp(linux)
 2. sudah terinstall salah satu kode editor di laptopmu, vs code, sublime text, atom, dan lain-lain
+3. sudah terinstall browser (chrome, firefox, dll)
+
+step setup awal.
+
+1. download project dari github, dengan memilih tombol dropdown warna hijau bertuliskan "Code" dan pilih "Download ZIP"
+2. ekstrak file yang sudah terdownload dan letakan projek yang telah terekstrak ke dalam folder htdocs. biasanya lokasi untuk windows di C:\xampp\htdocs
+3. jalankan server apache dan mysql di xampp
+
+
+step setup lanjutan
+1. buka di browser http://localhost/phpmyadmin setelah mengaktifkan server database dari aplikasi xampp.
+2. buat database baru dengan nama bebas, misal nama database "oiscoffee"
+3. setelah database terbuat, selanjutnya mengimport database yang sudah ada dalam folder project.
+4. klik nama database yang baru dibuat, kemudian pilih menu import, choose file dan cari file database yang berformat .sql.
+5. lokasi database project ini berada pada folder database di dalam project yang telah kita letakan di folder htdocs
+5. setelah menemukan file databasenya yang bernama oiscoffe_db, klik "go" dan data pada database akan terupdate.
+
 
