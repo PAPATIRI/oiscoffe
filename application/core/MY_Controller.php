@@ -25,15 +25,4 @@ class MY_Controller extends CI_Controller
         $data['contentnya'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/login/index', $data);
     }
-
-    public function render_backend($content, $data = NULL)
-    {
-        /*
-        * $data['headernya'] , $data['contentnya']
-        * variabel diatas ^ nantinya akan dikirim ke file views/template/backend/index.php
-        * */
-        $data['headernya'] = $this->load->view('template/backend/header', $data, TRUE);
-        $data['contentnya'] = $this->load->view($content, $data, TRUE);
-        $this->load->view('template/backend/index', $data);
-    }
 }

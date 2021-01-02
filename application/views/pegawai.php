@@ -14,7 +14,6 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Posisi</th>
-                    <!-- <th>Foto</th> -->
                     <th colspan="2">Aksi</th>
                 </tr>
             </thead>

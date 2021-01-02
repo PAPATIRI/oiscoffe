@@ -1,5 +1,5 @@
 <?php
-class Pegawai extends CI_Controller
+class Pegawai extends MY_Controller
 {
     public function __construct()
     {

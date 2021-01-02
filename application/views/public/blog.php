@@ -7,7 +7,7 @@
                     foreach ($berita as $b) { ?>
                         <div class="col-md-6 col-lg-4">
                             <div class="card card-custom" style="width: 18rem;">
-                                <img src="<?php $b->gambar ?>" class="card-img-top" alt="...">
+                                <img src="<?= base_url() ?>upload/pegawai/<?= $b->foto ?>" alt="" width="70" height="70 class=" card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $b->judul ?></h5>
                                     <p class="card-text"><?= $b->isi ?></p>

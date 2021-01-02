@@ -4,21 +4,37 @@ class Page extends MY_Controller
 {
     public function home()
     {
-        // function render_backend tersebut dari file core/MY_Controller.php
-        $this->render_backend('home'); // load view home.php
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('home');
+        $this->load->view('template/footer');
     }
     public function menu()
     {
-        // function render_backend tersebut dari file core/MY_Controller.php
-        $this->render_backend('menu'); // load view berita.php
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('menu');
+        $this->load->view('template/footer');
     }
     public function berita()
     {
-        $this->render_backend('berita'); // load view berita.php
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('berita');
+        $this->load->view('template/footer');
     }
     public function galeri()
     {
-        // function render_backend tersebut dari file core/MY_Controller.php
-        $this->render_backend('galeriadmin'); // load view galeri.php
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('galeriadmin');
+        $this->load->view('template/footer');
+    }
+    public function pegawai()
+    {
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('pegawai');
+        $this->load->view('template/footer');
     }
 }

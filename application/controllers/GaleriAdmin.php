@@ -12,42 +12,99 @@ class GaleriAdmin extends MY_Controller
 
     public function index()
     {
-        $data['galeriadmin'] = $this->ModelGaleri->view();
-        $this->render_backend('galeriadmin', $data);
+        $data['galeriadmin'] = $this->ModelGaleri->tampil_data()->result();
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('galeriadmin', $data);
+        $this->load->view('template/footer');
     }
 
     public function tambah()
     {
-        $data = array();
-        if ($this->input->post('submit')) { // Jika user mengklik tombol submit yang ada di form
-            if ($this->ModelGaleri->validation("save")) { // Jika validasi sukses atau hasil validasi adalah TRUE
-                $upload = $this->ModelGaleri->upload();
-                if ($upload['result'] == 'success') {
-                    $this->ModelGaleri->save(); // Panggil fungsi save() yang ada di ModelGaleri.php
-                    redirect('galeriadmin');
-                }
-            }
-        }
-
-        $this->render_backend('galeriadmin/form_tambah', $data);
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('galeriadmin');
+        $this->load->view('template/footer');
     }
 
-    public function ubah($id)
+    public function tambah_aksi()
     {
-        if ($this->input->post('submit')) { // Jika user mengklik tombol submit yang ada di form
-            if ($this->ModelGaleri->validation("update")) { // Jika validasi sukses atau hasil validasi adalah TRUE
-                $this->ModelGaleri->edit($id); // Panggil fungsi edit() yang ada di ModelGaleri.php
-                redirect('galeriadmin');
+        $nama = $this->input->post('nama');
+        $deskripsi = $this->input->post('deskripsi');
+        $foto = $_FILES['foto'];
+        if ($foto = '') {
+        } else {
+            $config['upload_path'] = './upload/';
+            $config['allowed_types'] = 'jpg|png|gif|jpeg';
+            $config['max_size'] = 2000;
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('foto')) {
+                echo "upload gagal";
+                die();
+            } else {
+                $foto = $this->upload->data('file_name');
             }
         }
+        $tag = $this->input->post('tag');
 
-        $data['galeriadmin'] = $this->ModelGaleri->view_by($id);
-        $this->render_backend('galeriadmin/form_ubah', $data);
+        $data = array(
+            'nama' => $nama,
+            'deskripsi' => $deskripsi,
+            'foto' => $foto,
+            'tag' => $tag,
+        );
+
+        $this->ModelGaleri->input_data($data, 'galeriadmin');
+        redirect('galeriadmin/index');
+    }
+
+    public function edit($id)
+    {
+        $where = array('id' => $id);
+        $data['galeri'] = $this->ModelGaleri->edit_data($where, 'galeri')->result();
+
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('galeriadmin/form_edit', $data);
+        $this->load->view('template/footer');
+    }
+    public function update()
+    {
+        $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
+        $deskripsi = $this->input->post('deskripsi');
+        $tag = $this->input->post('tag');
+        // $foto = $this->input->post('foto');
+
+        $data = array(
+            'nama' => $nama,
+            'deskripsi' => $deskripsi,
+            'tag' => $tag,
+        );
+
+        $where = array(
+            'id' => $id,
+        );
+
+        $this->ModelGaleri->update_data($where, $data, 'galeri');
+        redirect('galeriadmin/index');
     }
 
     public function hapus($id)
     {
-        $this->ModelGaleri->delete($id); // Panggil fungsi delete() yang ada di ModelGaleri.php
-        redirect('galeriadmin');
+        $where = array('id' => $id);
+        $this->ModelGaleri->hapus_data($where, 'galeri');
+        redirect('galeriadmin/index');
+    }
+    public function detail($id)
+    {
+        $detail = $this->ModelGaleri->detail_data($id);
+        $data['detail'] = $detail;
+
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('berita/detail', $data);
+        $this->load->view('template/footer');
     }
 }

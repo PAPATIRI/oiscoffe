@@ -7,49 +7,101 @@ class Berita extends MY_Controller
     {
         parent::__construct();
 
-        $this->load->model('admin/ModelBerita'); // Load ModelBerita ke controller ini
+        $this->load->model('admin/ModelBerita');
     }
 
     public function index()
     {
-        $data['berita'] = $this->ModelBerita->view();
-        $this->render_backend('berita', $data);
+        $data['berita'] = $this->ModelBerita->tampil_data()->result();
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('berita', $data);
+        $this->load->view('template/footer');
     }
 
     public function tambah()
     {
-        $data = array();
-        if ($this->input->post('submit')) { // Jika user mengklik tombol submit yang ada di form
-            if ($this->ModelBerita->validation("save")) { // Jika validasi sukses atau hasil validasi adalah TRUE
-                $upload = $this->ModelBerita->upload();
-                if ($upload['result'] == "success") {
-                    $this->ModelBerita->save($upload); // Panggil fungsi save() yang ada di ModelBerita.php
-                    redirect('berita');
-                } else {
-                    $data['message'] = $upload['error'];
-                }
-            }
-        }
-
-        $this->render_backend('berita/form_tambah');
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('pegawai');
+        $this->load->view('template/footer');
     }
 
-    public function ubah($id)
+    public function tambah_aksi()
     {
-        if ($this->input->post('submit')) { // Jika user mengklik tombol submit yang ada di form
-            if ($this->ModelBerita->validation("update")) { // Jika validasi sukses atau hasil validasi adalah TRUE
-                $this->ModelBerita->edit($id); // Panggil fungsi edit() yang ada di ModelBerita.php
-                redirect('berita');
+        $judul = $this->input->post('judul');
+        $isi = $this->input->post('isi');
+        $foto = $_FILES['foto'];
+        if ($foto = '') {
+        } else {
+            $config['upload_path'] = './upload';
+            $config['allowed_types'] = 'jpg|png|gif|jpeg';
+            $config['max_size'] = 2000;
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('foto')) {
+                echo "upload gagal";
+                die();
+            } else {
+                $foto = $this->upload->data('file_name');
             }
         }
 
-        $data['berita'] = $this->ModelBerita->view_by($id);
-        $this->render_backend('berita/form_ubah', $data);
+        $data = array(
+            'judul' => $judul,
+            'isi' => $isi,
+            'foto' => $foto,
+        );
+
+        $this->ModelBerita->input_data($data, 'berita');
+        redirect('berita/index');
+    }
+
+    public function edit($id)
+    {
+        $where = array('id' => $id);
+        $data['berita'] = $this->ModelBerita->edit_data($where, 'berita')->result();
+
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('berita/form_edit', $data);
+        $this->load->view('template/footer');
+    }
+    public function update()
+    {
+        $id = $this->input->post('id');
+        $judul = $this->input->post('judul');
+        $isi = $this->input->post('isi');
+        // $foto = $this->input->post('foto');
+
+        $data = array(
+            'judul' => $judul,
+            'isi' => $isi,
+            // 'foto' => $foto,
+        );
+
+        $where = array(
+            'id' => $id,
+        );
+
+        $this->ModelBerita->update_data($where, $data, 'berita');
+        redirect('berita/index');
     }
 
     public function hapus($id)
     {
-        $this->ModelBerita->delete($id); // Panggil fungsi delete() yang ada di ModelBerita.php
-        redirect('berita');
+        $where = array('id' => $id);
+        $this->ModelBerita->hapus_data($where, 'berita');
+        redirect('berita/index');
+    }
+    public function detail($id)
+    {
+        $detail = $this->ModelBerita->detail_data($id);
+        $data['detail'] = $detail;
+
+        $this->load->view('template/head');
+        $this->load->view('template/navbar');
+        $this->load->view('berita/detail', $data);
+        $this->load->view('template/footer');
     }
 }
