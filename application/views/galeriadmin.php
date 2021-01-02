@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h2 style="margin-top: 0;margin-bottom: 0;">Artikel OIS COFFEE</h2>
+    <h2 style="margin-top: 0;margin-bottom: 0;">Galeri OIS COFFEE</h2>
     <div class="clearfix"></div>
     <hr />
     <div class="table-responsive">
@@ -11,8 +11,8 @@
                     <th>No</th>
                     <th>Nama Foto</th>
                     <th>Deskripsi Foto</th>
-                    <th>File Gambar</th>
                     <th>Tag Foto</th>
+                    <th>File Gambar</th>
                     <th colspan="3">Aksi</th>
                 </tr>
             </thead>
