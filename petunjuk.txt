@@ -5,3 +5,9 @@ http://localhost/ois-coffee-shop/admin
 
 akun login dengan nama: oiscoffee
 dan password: oiscoffee2020
+
+step persiapan.
+
+1. pastikan sudah terinstall xampp di laptop kamu untuk os (windows), atau wampp (macbook), atau lampp(linux)
+2. sudah terinstall salah satu kode editor di laptopmu, vs code, sublime text, atom, dan lain-lain
+
