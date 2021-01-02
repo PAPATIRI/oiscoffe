@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('menu'); ?>">Menu Ois</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('pegawai'); ?>">Pegawai</a>
+                    </li>
                     <li class="nav-item ml-5">
                         <a class="nav-link btn btn-danger" href="<?php echo base_url('auth/logout'); ?>">Log out</a>
                     </li>

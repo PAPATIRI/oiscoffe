@@ -17,14 +17,26 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+        /* hitam pekat : 141414
+hitam muda: 1b1b1b
+putih mudah: f3f3f3
+abu-abu: e1e1e1
+ orange: E75326 */
+        body {
+            background-color: #1b1b1b;
+            color: #f3f3f3;
+        }
+
         .form-signin {
-            max-width: 330px;
-            padding: 15px;
-            margin: 0 auto;
+            max-width: 350px;
+            margin-top: 20vh;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .form-signin .form-signin-heading {
             margin-bottom: 10px;
+            text-align: center;
         }
 
         .form-signin .form-control {
@@ -40,18 +52,18 @@
         .form-signin .form-control:focus {
             z-index: 2;
         }
+
+        button {
+            margin-top: 2em;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container cont-custom">
         <div class="form-signin">
-            <h2 class="form-signin-heading">login admin</h2>
+            <h2 class="form-signin-heading">Login Admin</h2>
             <?php
-            /*
-            * Variabel $contentnya diambil dari core MY_Controller
-            * (application/core/MY_Controller.php)
-            * */
             echo $contentnya;
             ?>
         </div>

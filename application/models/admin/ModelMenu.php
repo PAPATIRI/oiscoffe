@@ -1,68 +1,36 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 class ModelMenu extends CI_Model
 {
-    public function view()
+    public function tampil_data()
     {
-        return $this->db->get('menu')->result();
+        return $this->db->get('menu');
     }
 
-    public function view_by($id)
+    public function input_data($data)
     {
-        $this->db->where('id', $id);
-        return $this->db->get('menu')->row();
-    }
-
-    // Fungsi untuk validasi form tambah dan ubah
-    public function validation($mode)
-    {
-        $this->load->library('form_validation'); // Load library form_validation untuk proses validasinya
-
-        // Tambahkan if apakah $mode save atau update
-        // Karena ketika update, NIS tidak harus divalidasi
-        // Jadi NIS di validasi hanya ketika menambah data siswa saja
-        if ($mode == "save")
-            $this->form_validation->set_rules('input_nama', 'Nama', 'required|max_length[50]');
-        $this->form_validation->set_rules('input_harga', 'Harga', 'required');
-        $this->form_validation->set_rules('input_gambar', 'Gambar', 'required');
-        $this->form_validation->set_rules('input_deskripsi', 'Deskripsi', 'required');
-
-        if ($this->form_validation->run()) // Jika validasi benar
-            return TRUE; // Maka kembalikan hasilnya dengan TRUE
-        else // Jika ada data yang tidak sesuai validasi
-            return FALSE; // Maka kembalikan hasilnya dengan FALSE
-    }
-
-    // Fungsi untuk melakukan simpan data ke tabel siswa
-    public function save()
-    {
-        $data = array(
-            "nama" => $this->input->post('input_nama'),
-            "harga" => $this->input->post('input_harga'),
-            "gambar" => $this->input->post('input_gambar'),
-            "deskripsi" => $this->input->post('input_deskripsi')
-        );
-
         $this->db->insert('menu', $data); // Untuk mengeksekusi perintah insert data
     }
 
-    // Fungsi untuk melakukan ubah data siswa berdasarkan NIS siswa
-    public function edit($id)
+    public function hapus_data($where, $table)
     {
-        $data = array(
-            "nama" => $this->input->post('input_nama'),
-            "harga" => $this->input->post('input_harga'),
-            "gambar" => $this->input->post('input_gambar'),
-            "deskripsi" => $this->input->post('input_deskripsi')
-        );
-
-        $this->db->where('id', $id);
-        $this->db->update('menu', $data); // Untuk mengeksekusi perintah update data
+        $this->db->where($where);
+        $this->db->delete($table);
     }
 
-    // Fungsi untuk melakukan menghapus data siswa berdasarkan NIS siswa
-    public function delete($id)
+    public function edit_data($where, $table)
     {
-        $this->db->where('id', $id);
-        $this->db->delete('menu'); // Untuk mengeksekusi perintah delete data
+        return $this->db->get_where($table, $where);
+    }
+
+    public function update_data($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
+
+    public function detail_data($id = NULL)
+    {
+        $query = $this->db->get_where('menu', array('id' => $id))->row();
+        return $query;
     }
 }

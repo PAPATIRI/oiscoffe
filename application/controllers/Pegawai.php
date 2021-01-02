@@ -33,7 +33,7 @@ class Pegawai extends MY_Controller
         $foto = $_FILES['foto'];
         if ($foto = '') {
         } else {
-            $config['upload_path'] = './upload/pegawai';
+            $config['upload_path'] = './upload';
             $config['allowed_types'] = 'jpg|png|gif|jpeg';
             $config['max_size'] = 2000;
 

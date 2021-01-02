@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h2 style="margin-top: 0;margin-bottom: 0;">Artikel OIS COFFEE</h2>
+    <h2 style="margin-top: 0;margin-bottom: 0;">Berita OIS COFFEE</h2>
     <div class="clearfix"></div>
     <hr />
     <div class="table-responsive">
@@ -19,11 +19,11 @@
             $no = 1;
             if (!empty($berita)) { // Jika data berita tidak sama dengan kosong, artinya jika data berita ada
                 foreach ($berita as $data) { ?>
-                    <tr>
+                    <tr class='text-center'>
                         <td class='text-center'><?= $no++ ?></td>
                         <td><?= $data->judul ?></td>
                         <td><?= $data->isi ?></td>
-                        <td><img src="<?= base_url() ?>upload/pegawai/<?= $data->foto ?>" alt="" width="70" height="70"></td>
+                        <td><img src="<?= base_url() ?>upload/<?= $data->foto ?>" alt="" width="70" height="70"></td>
                         <td onclick="javascript: return confirm('anda yakin ingin menghapus data ini ?')"><?= anchor("berita/hapus/" . $data->id, '<div class="btn btn-danger btn-sm">Hapus Data</div>') ?></td>
                         <td><?= anchor("berita/edit/" . $data->id, '<div class="btn btn-warning btn-sm">Edit Data</div>') ?></td>
                         <td>

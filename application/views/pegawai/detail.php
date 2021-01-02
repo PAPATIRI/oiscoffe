@@ -30,7 +30,7 @@
                 <tr>
                     <th>Foto: </th>
                     <td>
-                        <img src="<?= base_url() ?>upload/pegawai/<?= $detail->foto ?>" alt="img" width="100" height="100">
+                        <img src="<?= base_url() ?>upload/<?= $detail->foto ?>" alt="img" width="300">
                     </td>
                 </tr>
             </table>

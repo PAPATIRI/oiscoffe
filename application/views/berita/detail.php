@@ -14,7 +14,7 @@
                 <tr>
                     <th>Foto: </th>
                     <td>
-                        <img src="<?= base_url() ?>upload/<?= $detail->foto ?>" alt="" width="70" height="70">
+                        <img src="<?= base_url() ?>upload/<?= $detail->foto ?>" alt="" width="300">
                     </td>
                 </tr>
             </table>

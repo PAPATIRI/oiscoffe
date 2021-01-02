@@ -27,6 +27,7 @@
                         <td><?= $data->tgl_lhr ?></td>
                         <td><?= $data->jk ?></td>
                         <td><?= $data->posisi ?></td>
+                        <td><img src="<?= base_url() ?>upload/<?= $data->foto ?>" alt="" width="70" height="70"></td>
                         <td onclick="javascript: return confirm('anda yakin ingin menghapus data ini ?')"><?= anchor("pegawai/hapus/" . $data->id, '<div class="btn btn-danger btn-sm">Hapus Data</div>') ?></td>
                         <td><?= anchor("pegawai/edit/" . $data->id, '<div class="btn btn-warning btn-sm">Edit Data</div>') ?></td>
                         <td>
