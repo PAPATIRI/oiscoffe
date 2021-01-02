@@ -1,0 +1,7 @@
+database di folder root 'database'
+
+untuk login akun ketikan
+http://localhost/ois-coffee-shop/admin
+
+akun login dengan nama: oiscoffee
+dan password: oiscoffee2020

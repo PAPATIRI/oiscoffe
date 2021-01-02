@@ -9,4 +9,12 @@ class ModelData extends CI_Model
     {
         return $this->db->get('galeri');
     }
+    function tampil_menu()
+    {
+        return $this->db->get('menu');
+    }
+    function tampil_pegawai()
+    {
+        return $this->db->get('pegawai');
+    }
 }

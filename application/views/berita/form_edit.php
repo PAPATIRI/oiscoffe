@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Isi Artikel</label>
-                    <input type="date" class="form-control" name="isi" value="<?= $p->isi ?>">
+                    <input type="text" class="form-control" name="isi" value="<?= $p->isi ?>">
                 </div>
                 <div class="form-group">
                     <label for="">Upload Foto</label>

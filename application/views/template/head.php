@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>ois coffe</title>
+    <title>ois coffe admin</title>
     <!-- Load File CSS Bootstrap  -->
     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/custom-admin.css'); ?>" rel="stylesheet">

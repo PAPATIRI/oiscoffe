@@ -7,7 +7,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="site-heading">
                         <img class="img-fluid" src="<?= base_url('assets/img/logotrans.png') ?>" alt="">
-                        <a type="button" href="#content" class="mt-5 btn btn-sm btn-light btn-custom">lebih tahu tentang kami</a>
+                        <a type="button" href="#content" class="mt-5 btn btn-sm btn-light btn-custom">Kumpulan Foto Ois Coffee</a>
                     </div>
                 </div>
             </div>

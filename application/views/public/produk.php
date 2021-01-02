@@ -1,67 +1,40 @@
 <body>
 
-    <header class="produkhead" style="background-image: url('assets/img/bg1.png')">
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('assets/img/bgoiscoffe.jpg')">
         <div class="overlay"></div>
-        <div class="container site-title">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12 mx-auto my-auto">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <img class="img-fluid" src="<?= base_url('assets/img/logotrans.png') ?>" alt="">
+                        <a type="button" href="#menu" class="mt-5 btn btn-sm btn-light btn-custom">Produk Ois Coffee</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
     <div class="container">
-        <h1 class="text-light text-center mb-5">produk kami</h1>
+        <h1 class="text-light text-center mb-5" id="menu">produk kami</h1>
         <!-- card produk section -->
         <div class="row">
-            <!-- <div class="produk-card"> -->
-            <div class="card-deck">
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Kopi Capucino</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <?php
+            if (!empty($menu)) {
+                foreach ($menu as $b) { ?>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom" style="width: 18rem;">
+                            <img src="<?= base_url() ?>upload/<?= $b->foto ?>" height="300" alt="" class=" card-img-top" alt="...">
+                            <div class="card-body ">
+                                <h5 class="card-title text-light"><?= $b->nama ?></h5>
+                                <p class="card-text text-light"><?= word_limiter($b->deskripsi, 10) ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Kopi Mocacino</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Kopi Hitam</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Kopi Hitam</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Kopi Hitam</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php }
+            } else {
+                echo "<h3>data tidak tersedia</h3>";
+            }
+            ?>
         </div>
         <!-- card produk section end -->
     </div>
