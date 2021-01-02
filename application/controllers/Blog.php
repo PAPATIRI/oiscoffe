@@ -6,12 +6,12 @@ class Blog extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('public/M_Berita');
+        $this->load->model('public/ModelData');
         $this->load->helper('url');
     }
     public function index()
     {
-        $data['berita'] = $this->M_Berita->tampil_berita()->result();
+        $data['berita'] = $this->ModelData->tampil_berita()->result();
         $this->load->view('public/_partials/header.php');
         $this->load->view('public/_partials/navbar.php');
         $this->load->view('public/blog', $data);

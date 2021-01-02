@@ -14,9 +14,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <!-- <span class="subheading">Selamat Datang di</span> -->
             <img class="img-fluid" src="<?= base_url('assets/img/logotrans.png') ?>" alt="">
-            <button type="button" href="#about" class="mt-5 btn btn-sm btn-light">lebih tahu tentang kami</button>
+            <a type="button" href="#about" class="mt-5 btn btn-sm btn-light">lebih tahu tentang kami</a>
           </div>
         </div>
       </div>

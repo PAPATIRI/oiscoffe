@@ -1,35 +1,38 @@
 <body>
-    <header class="produkhead" style="background-image: url('assets/img/bg1.png')">
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('assets/img/bgoiscoffe.jpg')">
         <div class="overlay"></div>
-        <div class="container site-title">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12 mx-auto my-auto">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <img class="img-fluid" src="<?= base_url('assets/img/logotrans.png') ?>" alt="">
+                        <a type="button" href="#content" class="mt-5 btn btn-sm btn-light btn-custom">lebih tahu tentang kami</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="container">
+    <div class="container" id="content">
         <h1 class="text-center text-light mb-4">kumpulan foto kami</h1>
         <div class="img-fluid pb-5 mb-5">
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img class="img-max" src="assets/img/img1.jpeg " alt="" class="rounded">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img class="img-max" src="assets/img/img2.jpeg " alt="" class="rounded">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img class="img-max" src="assets/img/img3.jpeg " alt="" class="rounded">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img class="img-max" src="assets/img/img3.jpeg " alt="" class="rounded">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img class="img-max" src="assets/img/img4.jpeg " alt="" class="rounded">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img class="img-max" src="assets/img/img5.jpeg " alt="" class="rounded">
-                </div>
+                <?php
+                if (!empty($galeri)) {
+                    foreach ($galeri as $b) { ?>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card card-custom" style="width: 18rem;">
+                                <img src="<?= base_url() ?>upload/<?= $b->foto ?>" height="300" alt="" class=" card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light"><?= $b->nama ?></h5>
+                                </div>
+                            </div>
+                        </div>
+                <?php }
+                } else {
+                    echo "<h3>data tidak tersedia</h3>";
+                }
+                ?>
             </div>
         </div>
     </div>

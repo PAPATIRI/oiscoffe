@@ -9,4 +9,9 @@ class Index extends MY_Controller
         $this->load->view('index');
         $this->load->view('template/footer');
     }
+    public function tampil_jumlah_berita()
+    {
+        $data['total_berita'] = $this->ModelIndex->hitung_jumlah_berita();
+        $this->load->view('index', $data);
+    }
 }

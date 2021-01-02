@@ -11,6 +11,7 @@
     <title>ois coffe</title>
     <!-- Load File CSS Bootstrap  -->
     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/custom-admin.css'); ?>" rel="stylesheet">
 </head>
 
 <body>
