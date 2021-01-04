@@ -10,11 +10,10 @@ class Produk extends CI_Controller
     }
     public function index()
     {
-        $data['menu'] = $this->ModelData->tampil_menu()->result();
         $this->load->view('public/_partials/header.php');
         $this->load->view('public/_partials/navbar.php');
-        $this->load->view('public/produk', $data);
-        // $this->load->view('public/_partials/footer.php');
+        $this->load->view('public/produk');
+        $this->load->view('public/_partials/footer.php');
         $this->load->view('public/_partials/js.php');
     }
 }

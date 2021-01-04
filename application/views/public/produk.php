@@ -22,43 +22,56 @@
                     <tr>
                         <th colspan="2">Coffee</th>
                     </tr>
-                    <tr>
-                        <td>ini menu</td>
-                        <td>ini harga</td>
-                    </tr>
+                    <?php
+                    foreach ($this->ModelData->tampil_menu_by_tag('coffee')->result() as $d) { ?>
+                        <tr class="text-left">
+                            <td><?= $d->nama; ?></td>
+                            <td><?= $d->harga; ?></td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
             <div class="col-md-6">
                 <table class="table table-dark text-center">
                     <tr>
-                        <th colspan="2">Coffee</th>
+                        <th colspan="2">Main & snack</th>
                     </tr>
-                    <tr>
-                        <td>ini menu</td>
-                        <td>ini harga</td>
-                    </tr>
+                    <?php
+                    // $data['menu'] = $this->ModelData->tampil_menu_by_tag('main & snack')->result();
+                    foreach ($this->ModelData->tampil_menu_by_tag('main & snack')->result() as $d) { ?>
+                        <tr class="text-left">
+                            <td><?= $d->nama; ?></td>
+                            <td><?= $d->harga; ?></td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
             <div class="col-md-6">
                 <table class="table table-dark text-center">
                     <tr>
-                        <th colspan="2">Coffee</th>
+                        <th colspan="2">Non Coffee</th>
                     </tr>
-                    <tr>
-                        <td>ini menu</td>
-                        <td>ini harga</td>
-                    </tr>
+                    <?php
+                    foreach ($this->ModelData->tampil_menu_by_tag('non coffee')->result() as $d) { ?>
+                        <tr class="text-left">
+                            <td><?= $d->nama; ?></td>
+                            <td><?= $d->harga; ?></td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
             <div class="col-md-6">
                 <table class="table table-dark text-center">
                     <tr>
-                        <th colspan="2">Coffee</th>
+                        <th colspan="2">Manual Brew</th>
                     </tr>
-                    <tr>
-                        <td>ini menu</td>
-                        <td>ini harga</td>
-                    </tr>
+                    <?php
+                    foreach ($this->ModelData->tampil_menu_by_tag('manual brew')->result() as $d) { ?>
+                        <tr class="text-left">
+                            <td><?= $d->nama; ?></td>
+                            <td><?= $d->harga; ?></td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
         </div>
