@@ -31,28 +31,27 @@ class Menu extends MY_Controller
     {
         $nama = $this->input->post('nama');
         $harga = $this->input->post('harga');
-        $deskripsi = $this->input->post('deskripsi');
-        $foto = $_FILES['foto'];
-        if ($foto = '') {
-        } else {
-            $config['upload_path'] = './upload';
-            $config['allowed_types'] = 'jpg|png|gif|jpeg';
-            $config['max_size'] = 2000;
+        $tag = $this->input->post('tag');
+        // $foto = $_FILES['foto'];
+        // if ($foto = '') {
+        // } else {
+        //     $config['upload_path'] = './upload';
+        //     $config['allowed_types'] = 'jpg|png|gif|jpeg';
+        //     $config['max_size'] = 2000;
 
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('foto')) {
-                echo "upload gagal";
-                die();
-            } else {
-                $foto = $this->upload->data('file_name');
-            }
-        }
+        //     $this->load->library('upload', $config);
+        //     if (!$this->upload->do_upload('foto')) {
+        //         echo "upload gagal";
+        //         die();
+        //     } else {
+        //         $foto = $this->upload->data('file_name');
+        //     }
+        // }
 
         $data = array(
             'nama' => $nama,
             'harga' => $harga,
-            'foto' => $foto,
-            'deskripsi' => $deskripsi,
+            'tag' => $tag,
         );
 
         $this->ModelMenu->input_data($data, 'menu');
@@ -74,13 +73,13 @@ class Menu extends MY_Controller
         $id = $this->input->post('id');
         $nama = $this->input->post('nama');
         $harga = $this->input->post('harga');
-        $deskripsi = $this->input->post('deskripsi');
+        $tag = $this->input->post('tag');
         // $foto = $this->input->post('foto');
 
         $data = array(
             'nama' => $nama,
             'harga' => $harga,
-            'deskripsi' => $deskripsi,
+            'tag' => $tag,
             // 'foto' => $foto,
         );
 

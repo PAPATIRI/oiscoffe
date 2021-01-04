@@ -8,10 +8,9 @@
             <thead>
                 <tr class="text-center">
                     <th>N0</th>
-                    <th>Nama</th>
-                    <th>Harga</th>
-                    <th>Gambar</th>
-                    <th>Deskripsi</th>
+                    <th>Nama Menu</th>
+                    <th>Harga Menu</th>
+                    <th>Tag Menu</th>
                     <th colspan="3">Aksi</th>
                 </tr>
             </thead>
@@ -23,8 +22,7 @@
                         <td class='text-center'><?= $no++ ?></td>
                         <td><?= $data->nama ?></td>
                         <td><?= $data->harga ?></td>
-                        <td><img src="<?= base_url() ?>upload/<?= $data->foto ?>" alt="" width="70" height="70"></td>
-                        <td><?= $data->deskripsi ?></td>
+                        <td><?= $data->tag ?></td>
                         <td onclick="javascript: return confirm('anda yakin ingin menghapus data ini ?')"><?= anchor("menu/hapus/" . $data->id, '<div class="btn btn-danger btn-sm">Hapus Data</div>') ?></td>
                         <td><?= anchor("menu/edit/" . $data->id, '<div class="btn btn-warning btn-sm">Edit Data</div>') ?></td>
 
@@ -59,12 +57,13 @@
                     <input type="text" name="harga" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Upload Foto</label>
-                    <input type="file" name="foto" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Deskripsi Menu</label>
-                    <input type="text" name="deskripsi" class="form-control">
+                    <label for="">Tag Menu</label>
+                    <select name="tag" class="form-control">
+                        <option>coffee</option>
+                        <option>main & snack</option>
+                        <option>non coffee</option>
+                        <option>manual brew</option>
+                    </select>
                 </div>
             </div>
             <div class="modal-footer">

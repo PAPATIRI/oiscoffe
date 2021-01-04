@@ -14,7 +14,7 @@ class Produk extends CI_Controller
         $this->load->view('public/_partials/header.php');
         $this->load->view('public/_partials/navbar.php');
         $this->load->view('public/produk', $data);
-        $this->load->view('public/_partials/footer.php');
+        // $this->load->view('public/_partials/footer.php');
         $this->load->view('public/_partials/js.php');
     }
 }

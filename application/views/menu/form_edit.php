@@ -13,12 +13,13 @@
                     <input type="text" class="form-control" name="harga" value="<?= $p->harga ?>">
                 </div>
                 <div class="form-group">
-                    <label for="">Upload Foto Menu</label>
-                    <input type="file" name="foto" class="form-control" value="<?= $p->foto ?>">
-                </div>
-                <div class="form-group">
-                    <label for="">Deskripsi Menu</label>
-                    <input type="text" class="form-control" name="deskripsi" value="<?= $p->harga ?>">
+                    <label for="">Tag Menu</label>
+                    <select name="tag" class="form-control">
+                        <option>coffee</option>
+                        <option>main & snack</option>
+                        <option>non coffee</option>
+                        <option>manual brew</option>
+                    </select>
                 </div>
                 <button type="reset" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-success">Simpan</button>
