@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2021 at 04:38 AM
+-- Generation Time: Jan 04, 2021 at 06:54 AM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,19 +75,44 @@ INSERT INTO `galeri` (`id`, `nama`, `deskripsi`, `foto`, `tag`) VALUES
 CREATE TABLE `menu` (
   `id` int(64) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `foto` varchar(255) NOT NULL,
-  `deskripsi` text NOT NULL
+  `harga` varchar(11) NOT NULL,
+  `tag` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `menu`
 --
 
-INSERT INTO `menu` (`id`, `nama`, `harga`, `foto`, `deskripsi`) VALUES
-(10, 'kopi susu', 5000, 'kopisusu.jpg', 'kopi hitam yang nikmat dipadukan dengan susu cream'),
-(11, 'kopi joss', 12000, 'kopijoss.jpg', 'sebuah kopi khas yang dapat anda temukan di jogja'),
-(12, 'kopi mocacino', 15000, 'cappucino1.jpg', 'kopi mocacino yang di buat begitu lah');
+INSERT INTO `menu` (`id`, `nama`, `harga`, `tag`) VALUES
+(14, 'sanger', '15k', 'coffee'),
+(15, 'kopi OIS', '14k', 'coffee'),
+(16, 'Aren OIS', '15K', 'coffee'),
+(17, 'Americano', '12k', 'coffee'),
+(18, 'Latte', '15k', 'coffee'),
+(19, 'Kopi RedVelvet', '17k', 'coffee'),
+(20, 'Kopi Greentea', '17k', 'coffee'),
+(21, 'Caramel Macchiato', '18k', 'coffee'),
+(22, 'Pandan', '18k', 'coffee'),
+(23, 'Vanilla', '20k', 'coffee'),
+(24, 'Hazelnut', '20k', 'coffee'),
+(25, 'Caramel', '20k', 'coffee'),
+(26, 'Nasi Ayam', '18k', 'main & snack'),
+(27, 'Nasi Nugget', '15k', 'main & snack'),
+(28, 'Nasi Sosis', '15k', 'main & snack'),
+(29, 'Nasi Goreng', '13k', 'main & snack'),
+(30, 'Nasi Telur', '12k', 'main & snack'),
+(31, 'Mie Goreng', '12k', 'main & snack'),
+(32, 'French Fries', '10k', 'main & snack'),
+(33, 'Sosis + Nugget', '10k', 'main & snack'),
+(34, 'Snack Komplit', '15k', 'main & snack'),
+(35, 'Chocolate', '12k', 'non coffee'),
+(36, 'Red Velvet', '12k', 'non coffee'),
+(37, 'Green Tea', '12k', 'non coffee'),
+(38, 'Taro', '12k', 'non coffee'),
+(39, 'Lemon Tea', '10k', 'non coffee'),
+(40, 'V60', '20k', 'manual brew'),
+(41, 'Tubruk', '15k', 'manual brew'),
+(42, 'Vietnam Drip', '15k', 'manual brew');
 
 -- --------------------------------------------------------
 
@@ -191,7 +216,7 @@ ALTER TABLE `galeri`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
